@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Manager : MonoBehaviour
 {
-    public static Manager Instance = null; 
+    public static Manager Instance = null;
 
     public GameObject spawnPoint;
     public GameObject[] enemies;
@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
     public int totalEnemies;
     public int enemiesPerSpawn;
     int enemiesOnScreen = 0;
+    const float spawnDelay = 0.5f;
 
     void Awake()
     {
@@ -28,15 +29,11 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Spawn();
+        StartCoroutine(Spawn());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    void Spawn()
+
+    IEnumerator Spawn()
     {
         if (enemiesPerSpawn > 0 && enemiesOnScreen < totalEnemies)
         {
@@ -44,11 +41,20 @@ public class Manager : MonoBehaviour
             {
                 if (enemiesOnScreen < maxEnemiesOnScreen)
                 {
-                    GameObject newEnemy = Instantiate(enemies[0]) as GameObject;
+                    GameObject newEnemy = Instantiate(enemies[1]) as GameObject;
                     newEnemy.transform.position = spawnPoint.transform.position;
                     enemiesOnScreen += 1;
                 }
             }
-        }    
+            yield return new WaitForSeconds(spawnDelay);
+            StartCoroutine(Spawn());
+        }
+    }
+    public void removeEnemyFromScreen()
+    {
+        if (enemiesOnScreen > 0)
+        {
+            enemiesOnScreen -= 1;
+        }
     }
 }

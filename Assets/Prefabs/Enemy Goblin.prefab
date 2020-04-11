@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7961402244767831309}
   - component: {fileID: 4081571433496519764}
   - component: {fileID: 1272812970921733478}
+  - component: {fileID: 4460191807442772786}
   m_Layer: 8
   m_Name: Enemy Goblin
   m_TagString: Enemy
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: ddd5568f1798c2647aadd4335779b6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,7 +136,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.08}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -146,5 +147,28 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22, y: 0.35}
+  m_Size: {x: 0.19, y: 0.23}
   m_EdgeRadius: 0
+--- !u!114 &4460191807442772786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5137926010538457359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86b3d4ee7f06354eb61eaf2e44a0c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 0
+  exit: {fileID: 8041013202423400138, guid: 93d57f202a994404bb29013a21f27fc8, type: 3}
+  wayPoints:
+  - {fileID: 1158515883890757030, guid: 0940e697cef83dd4a82ebcc7eb9c3906, type: 3}
+  - {fileID: 6141001699156851087, guid: 1270d012da7ad784dbb10a5272c77f99, type: 3}
+  - {fileID: 2033705485353599143, guid: 721d773d8489c904a8b5f78bdbf9a6f4, type: 3}
+  - {fileID: 2877480895022146679, guid: b6e91b2d19b011e45a4236c27b0b8a6d, type: 3}
+  - {fileID: 510664420471625160, guid: 7d769b9091de5f345ba2a53454516f85, type: 3}
+  - {fileID: 5377173006594400330, guid: 2695ae90c15c18a4db198b1e7b7de012, type: 3}
+  - {fileID: 3438398779004074440, guid: 5755045978c6e7a48bcd0cc408b827db, type: 3}
+  navigation: 0.01

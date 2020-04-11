@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Loader.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <None Include="Assets\Монстры\craftpix-904589-free-reaper-man-chibi-2d-game-sprites\Reaper_Man_2\TXT\license.txt" />
